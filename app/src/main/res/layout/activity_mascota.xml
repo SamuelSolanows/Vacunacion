@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MascotaActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/ilitaneegular"
+            android:gravity="center"
+            android:text="Mascotas"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/txtNombreMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/ilitaneegular"
+            android:hint="Nombre"
+            android:inputType="text"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/txtTipoMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/ilitaneegular"
+            android:hint="Tipo"
+            android:inputType="text"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/txtRazaMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:fontFamily="@font/ilitaneegular"
+            android:hint="Raza"
+            android:inputType="text"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="388dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableEnd="@drawable/baseline_calendar_month_24"
+            android:ems="10"
+            android:fontFamily="@font/ilitaneegular"
+            android:hint="Fecha"
+            android:inputType="date"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnAgregarMascota"
+            android:layout_width="222dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/ilitaneegular"
+            android:text="Agregar mascota"
+            android:textSize="20sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
