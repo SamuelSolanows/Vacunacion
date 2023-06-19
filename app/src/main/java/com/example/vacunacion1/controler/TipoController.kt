@@ -35,7 +35,9 @@ class TipoController(context: Context) : DBconexion(context), CRUD<Tipo> {
     }
 
     override fun eliminar(data: Tipo): Long {
-        TODO("Not yet implemented")
+        var condicion="$ID LIKE ?"
+        var argument= arrayOf(data.Id.toString())
+        return writableDatabase.delete(TABLA,condicion,argument).toLong()
     }
 
     override fun editar(data: Tipo): Long {

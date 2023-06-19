@@ -14,17 +14,23 @@ class RazaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRazaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        llenarrecycle()
         binding.apply {
-            RecicleRa.layoutManager = LinearLayoutManager(this@RazaActivity)
-            RecicleRa.adapter = RazaAdapter(RazaController(this@RazaActivity).leer())
-            btnAgregarMascota.setOnClickListener {
+             btnAgregarMascota.setOnClickListener {
                 RazaController(this@RazaActivity).insertar(
                     Raza(
                         0,
                         txtNombreMascota.text.toString()
                     )
                 )
+                 txtNombreMascota.setText("")
+                 llenarrecycle()
             }
         }
+    }
+    fun llenarrecycle(){
+        binding.RecicleRa.layoutManager = LinearLayoutManager(this@RazaActivity)
+        binding.RecicleRa.adapter = RazaAdapter(RazaController(this@RazaActivity).leer())
+
     }
 }

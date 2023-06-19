@@ -34,7 +34,10 @@ class VacunaControler(context: Context):DBconexion(context),CRUD<Vacuna> {
     }
 
     override fun eliminar(data: Vacuna): Long {
-        TODO("Not yet implemented")
+        var condicion="${TipoController.ID} LIKE ?"
+        var argument= arrayOf(data.Id.toString())
+        return writableDatabase.delete(TABLA,condicion,argument).toLong()
+
     }
 
     override fun editar(data: Vacuna): Long {

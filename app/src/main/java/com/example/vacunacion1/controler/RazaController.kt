@@ -40,7 +40,9 @@ class RazaController(context: Context) : DBconexion(context), CRUD<Raza> {
     }
 
     override fun eliminar(data: Raza): Long {
-        TODO("Not yet implemented")
+        var condicion="$ID LIKE ?"
+        var argumento= arrayOf(data.Id.toString())
+        return writableDatabase.delete(TABLA,condicion,argumento).toLong()
     }
 
     override fun editar(data: Raza): Long {

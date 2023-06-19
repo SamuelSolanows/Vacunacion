@@ -2,6 +2,8 @@ package com.example.vacunacion1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vacunacion1.adapter.VacunaAdapter
 import com.example.vacunacion1.clases.Vacuna
@@ -15,11 +17,24 @@ class VacunaActivity : AppCompatActivity() {
         binding=ActivityVacunaBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
-            Recivacuna.layoutManager=LinearLayoutManager(this@VacunaActivity)
-            Recivacuna.adapter=VacunaAdapter(VacunaControler(this@VacunaActivity).leer())
+            llenarRecycle()
             btnAgregarMascota.setOnClickListener {
-                VacunaControler(this@VacunaActivity).insertar(Vacuna(0,txtNombreMascota.text.toString()))
+                if(txtNombreMascota.text.isEmpty()){
+                    txtNombreMascota.setError("campo necesario")
+                }else{
+                    VacunaControler(this@VacunaActivity).insertar(Vacuna(0,txtNombreMascota.text.toString()))
+                    Toast.makeText(this@VacunaActivity, "Guardado", Toast.LENGTH_SHORT).show()
+                    llenarRecycle()
+                    txtNombreMascota.setText("")
+                }
+
             }
         }
     }
+
+    fun llenarRecycle(){
+        binding.Recivacuna.layoutManager=LinearLayoutManager(this@VacunaActivity)
+        binding.Recivacuna.adapter=VacunaAdapter(VacunaControler(this@VacunaActivity).leer())
+    }
+
 }

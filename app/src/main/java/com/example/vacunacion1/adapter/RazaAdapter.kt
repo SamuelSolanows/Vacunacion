@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vacunacion1.R
 import com.example.vacunacion1.clases.Raza
 import com.example.vacunacion1.clases.Tipo
+import com.example.vacunacion1.controler.RazaController
 import com.example.vacunacion1.databinding.ReciclarRazaBinding
 import com.example.vacunacion1.databinding.ReciclarTipoBinding
 
@@ -25,6 +26,11 @@ class RazaAdapter(var raza: MutableList<Raza>) : RecyclerView.Adapter<RazaAdapte
         pasision.apply {
             holder.binding.apply {
                 textView2.text = Nombre
+                imageView3.setOnClickListener {
+                    RazaController(root.context).eliminar(pasision)
+                    raza.remove(pasision)
+                    notifyItemRemoved(position)
+                }
             }
         }
     }
