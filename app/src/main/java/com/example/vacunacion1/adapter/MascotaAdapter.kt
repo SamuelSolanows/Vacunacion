@@ -15,7 +15,7 @@ class MascotaAdapter(var mascota: MutableList<Mascota>) :
         return Holder(
             ReciclarMascotaBinding.bind(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.activity_mascota, parent, false)
+                    .inflate(R.layout.reciclar_mascota, parent, false)
             )
         )
     }

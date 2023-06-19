@@ -24,7 +24,6 @@
             android:layout_weight="1"
             android:fontFamily="@font/ilitaneegular"
             android:gravity="center"
-            android:text="TextView"
             android:textSize="20sp" />
 
         <TextView
@@ -34,7 +33,6 @@
             android:layout_weight="1"
             android:fontFamily="@font/ilitaneegular"
             android:gravity="center"
-            android:text="TextView"
             android:textSize="20sp" />
 
         <TextView
@@ -44,7 +42,6 @@
             android:layout_weight="1"
             android:fontFamily="@font/ilitaneegular"
             android:gravity="center"
-            android:text="TextView"
             android:textSize="20sp" />
 
         <TextView
@@ -54,7 +51,6 @@
             android:layout_weight="1"
             android:fontFamily="@font/ilitaneegular"
             android:gravity="center"
-            android:text="TextView"
             android:textSize="20sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

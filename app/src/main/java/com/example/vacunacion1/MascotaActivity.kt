@@ -42,14 +42,11 @@ class MascotaActivity : AppCompatActivity() {
 
                 } else {
                     MascotaController(this@MascotaActivity).insertar(
-                        Mascota(
-                            0,
-                            txtNombreMascota.text.toString(),
-                            1,
-                            1,
-                            txtFecha.text.toString()
-                        )
+                        Mascota(0, txtNombreMascota.text.toString(), 1, 1, txtFecha.text.toString())
                     )
+
+                    txtFecha.setText("")
+                    txtNombreMascota.setText("")
                     llenarreci()
                 }
             }
