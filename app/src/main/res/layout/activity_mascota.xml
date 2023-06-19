@@ -6,80 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".MascotaActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:fontFamily="@font/ilitaneegular"
-            android:gravity="center"
-            android:text="Mascotas"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/txtNombreMascota"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:fontFamily="@font/ilitaneegular"
-            android:hint="Nombre"
-            android:inputType="text"
-            android:textSize="24sp" />
-
-        <Spinner
-            android:id="@+id/spinnerTipo"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_margin="20dp" />
-
-        <Spinner
-            android:id="@+id/spinnerRaza"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_margin="20dp" />
-
-        <EditText
-            android:id="@+id/txtFecha"
-            android:layout_width="388dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:drawableEnd="@drawable/baseline_calendar_month_24"
-            android:ems="10"
-            android:focusable="false"
-            android:fontFamily="@font/ilitaneegular"
-            android:hint="Fecha"
-            android:inputType="date"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/btnAgregarMascota"
-            android:layout_width="222dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:fontFamily="@font/ilitaneegular"
-            android:text="Agregar mascota"
-            android:textSize="20sp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/Recicle"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp" />
-    </LinearLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/ilitaneegular"
+                android:gravity="center"
+                android:text="Mascotas"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/txtNombreMascota"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:fontFamily="@font/ilitaneegular"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:textSize="24sp" />
+
+            <Spinner
+                android:id="@+id/spinnerTipo"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="20dp" />
+
+            <Spinner
+                android:id="@+id/spinnerRaza"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="20dp" />
+
+            <EditText
+                android:id="@+id/txtFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:drawableEnd="@drawable/baseline_calendar_month_24"
+                android:ems="10"
+                android:focusable="false"
+                android:fontFamily="@font/ilitaneegular"
+                android:hint="Fecha"
+                android:inputType="date"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnAgregarMascota"
+                android:layout_width="222dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/ilitaneegular"
+                android:text="Agregar mascota"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Recicle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:minHeight="300dp" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

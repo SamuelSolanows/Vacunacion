@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vacunacion1.adapter.MascotaAdapter
 import com.example.vacunacion1.clases.Mascota
@@ -37,18 +38,34 @@ class MascotaActivity : AppCompatActivity() {
                 android.R.layout.simple_spinner_dropdown_item,
                 TipoController(this@MascotaActivity).leer()
             )
+
             btnAgregarMascota.setOnClickListener {
-                if (txtFecha.text.isEmpty() || txtNombreMascota.text.isEmpty()) {
+                try {
 
-                } else {
-                    MascotaController(this@MascotaActivity).insertar(
-                        Mascota(0, txtNombreMascota.text.toString(), 1, 1, txtFecha.text.toString())
-                    )
 
-                    txtFecha.setText("")
-                    txtNombreMascota.setText("")
-                    llenarreci()
+                    if (txtFecha.text.isEmpty() || txtNombreMascota.text.isEmpty()) {
+
+                    } else {
+                        var tipo = spinnerTipo.selectedItem as Tipo
+                        var raza = spinnerRaza.selectedItem as Raza
+                        MascotaController(this@MascotaActivity).insertar(
+                            Mascota(
+                                0,
+                                txtNombreMascota.text.toString(),
+                                raza.Id,
+                                tipo.Id,
+                                txtFecha.text.toString()
+                            )
+                        )
+
+                        txtFecha.setText("")
+                        txtNombreMascota.setText("")
+                        llenarreci()
+                    }
+                } catch (e: Exception) {
+                    Toast.makeText(this@MascotaActivity, e.message, Toast.LENGTH_SHORT).show()
                 }
+
             }
 
             llenarreci()
